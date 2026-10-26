@@ -22,7 +22,9 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
-    ls.readlines("\x0", chomp: true).select { |f| f.start_with?('lib/', 'CHANGELOG.md', 'LICENSE', 'README.md') }
+    ls.readlines("\x0", chomp: true).select do |f|
+      f.start_with?('lib/', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.md')
+    end
   end
   spec.require_paths = ['lib']
 
