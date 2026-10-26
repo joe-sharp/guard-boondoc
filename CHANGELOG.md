@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-26
+
+### 🐛 Bug Fixes
+- **Gem packaging:** the gemspec now ships `LICENSE.txt` (previously matched as `LICENSE`, so it was omitted) and `CODE_OF_CONDUCT.md`.
+
 ## [0.1.0] - 2026-10-26
 
 ### ✨ Features
