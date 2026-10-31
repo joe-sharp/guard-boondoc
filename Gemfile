@@ -16,3 +16,5 @@ group :development do
   gem 'guard-rspec', '~> 4.7' # the Guardfile runs this repo's own plugin
   gem 'guard-rubocop', '~> 1.5'
 end
+
+gem "sharp_style_rubocop", "~> 0.1.5"
