@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'fileutils'
-require 'guard/compat/plugin'
-require 'boondoc'
-require_relative 'boondoc/version'
+require "fileutils"
+require "guard/compat/plugin"
+require "boondoc"
+require_relative "boondoc/version"
 
 module Guard
   # Regenerates boondoc documentation when a file boondoc reads changes.
@@ -25,7 +25,7 @@ module Guard
   #   end
   class Boondoc < Plugin
     # Files whose change can alter how every other file is read.
-    CONFIG_FILES = [::Boondoc::Config::FILE, '.yardopts'].freeze
+    CONFIG_FILES = [::Boondoc::Config::FILE, ".yardopts"].freeze
     GLOB_FLAGS = File::FNM_PATHNAME | File::FNM_EXTGLOB
 
     # Watches every file, then narrows to the ones boondoc reads when they change,
@@ -60,8 +60,8 @@ module Guard
 
       generate if @custom_watchers || relevant?(paths)
     end
-    alias run_on_additions run_on_modifications
-    alias run_on_removals run_on_modifications
+    alias_method :run_on_additions, :run_on_modifications
+    alias_method :run_on_removals, :run_on_modifications
 
     private
 
@@ -69,8 +69,8 @@ module Guard
       config = ::Boondoc::Config.load
       ::Boondoc::Generator.new(config).run
       remember(config)
-      record('ok')
-      Compat::UI.info('boondoc: docs regenerated')
+      record("ok")
+      Compat::UI.info("boondoc: docs regenerated")
     rescue ::Boondoc::Error => e
       record("error #{e.message}")
       Compat::UI.error("boondoc: #{e.message}")
@@ -121,8 +121,8 @@ module Guard
     end
 
     def in_output?(config, path)
-      output = config.output_dir.delete_prefix(File.join(config.root, ''))
-      path == output || path.start_with?(File.join(output, ''))
+      output = config.output_dir.delete_prefix(File.join(config.root, ""))
+      path == output || path.start_with?(File.join(output, ""))
     end
   end
 end
