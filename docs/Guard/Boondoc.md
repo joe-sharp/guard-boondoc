@@ -37,7 +37,7 @@ end
 ### <a id="constant-CONFIG_FILES"></a>`CONFIG_FILES`
 
 ```ruby
-CONFIG_FILES = [::Boondoc::Config::FILE, '.yardopts'].freeze
+CONFIG_FILES = [::Boondoc::Config::FILE, ".yardopts"].freeze
 ```
 
 Files whose change can alter how every other file is read.
