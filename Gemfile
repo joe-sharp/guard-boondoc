@@ -8,7 +8,7 @@ gem "boondoc"
 gem "ostruct" # guard's DSL requires it; no longer a default gem in Ruby 4.0
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
-gem "rubocop", "~> 1.21"
+gem "rubocop", "~> 1.92"
 gem "rubocop-performance", require: false
 gem "rubocop-rspec", require: false
 
@@ -17,4 +17,4 @@ group :development do
   gem "guard-rubocop", "~> 1.5"
 end
 
-gem "sharp_style_rubocop", "~> 0.1.5"
+gem "sharp_style_rubocop", "~> 0.1.6"
